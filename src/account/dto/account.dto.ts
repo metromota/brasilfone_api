@@ -1,3 +1,9 @@
 export default class AccountDto {
-  constructor(name: string, username: string, email: string, password: string, tel: string) {}
+  constructor(
+    public name: string,
+    public username: string,
+    public email: string,
+    public password: string,
+    public tel: string,
+  ) {}
 }

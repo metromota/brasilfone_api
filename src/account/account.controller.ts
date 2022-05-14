@@ -9,7 +9,7 @@ export class AccountController {
   @Post()
   async login(@Body() accountdto: AccountDto) {
     const { name } = accountdto;
-    this.accountservice.login();
-    return JSON.stringify({ name });
+    let obj = await this.accountservice.login();
+    return JSON.stringify(obj);
   }
 }
