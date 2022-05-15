@@ -1,9 +1,9 @@
-export default class AccountDto {
+export default class CreateAccountDto {
   constructor(
     public name: string,
-    public username: string,
     public email: string,
     public password: string,
+    public ddi: string,
     public tel: string,
   ) {}
 }
