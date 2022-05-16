@@ -1,11 +1,24 @@
+import { IsString } from "class-validator";
+
 export default class CreateAccountDto {
-  constructor(
-    public name: string,
-    public email: string,
-    public password: string,
-    public ddi: string,
-    public tel: string,
-    public newsletter: string,
-    public privacy: string,
-  ) {}
+  @IsString()
+  public name: string;
+
+  @IsString()
+  public email: string;
+
+  @IsString()
+  public password: string;
+
+  @IsString()
+  public ddi: string;
+
+  @IsString()
+  public tel: string;
+
+  @IsString()
+  public newsletter: string;
+
+  @IsString()
+  public privacy: string;
 }

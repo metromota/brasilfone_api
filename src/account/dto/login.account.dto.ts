@@ -1,3 +1,11 @@
+import { IsString } from "class-validator";
+
 export default class LoginAccountDto {
-  constructor(public username: string, public password: string) {}
+  
+  @IsString()
+  public username: string;
+   
+  @IsString()
+  public password: string;
+  
 }
