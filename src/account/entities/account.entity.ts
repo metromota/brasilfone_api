@@ -15,7 +15,7 @@ export class Account {
   password: string;
 
   @Column()
-  tel: number;
+  tel: string;
   
   @Column()
   ddi: string;

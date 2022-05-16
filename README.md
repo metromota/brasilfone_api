@@ -32,15 +32,15 @@ $ yarn run start:prod
 ### OBS: Banco POSTGRESQL rodando no mesmo HOST, caso não esteja alterar app.module.ts 
 ```
  TypeOrmModule.forRoot({
-      type:'postgres',
-      host:'localhost', //host do banco
-      port: 5432,
-      username:'postgres',
-      password:'SENHA',
-      database:'postgres',
-      entities: [__dirname+ '/**/*.entity{.ts,.js}'],
-      synchronize: true,
-    }),
+    type:'postgres',
+    host:'localhost', //host do banco
+    port: 5432,
+    username:'postgres',
+    password:'SENHA',
+    database:'postgres',
+    entities: [__dirname+ '/**/*.entity{.ts,.js}'],
+    synchronize: true,
+  }),
 
 ```
 
@@ -52,8 +52,8 @@ $ yarn run start:prod
 
 Body Params:
 {
-	"username":"",
-	"password":""
+  "username":"",
+  "password":""
 }
 
 Resposta caso solicitação for ok:
@@ -112,7 +112,7 @@ Resposta caso solicitação for ok:
 ```
 
 
-## Manter contato
+## LinkedIn
 - Author - [Herton Mota](https://www.linkedin.com/in/herton-mota/)
 
 

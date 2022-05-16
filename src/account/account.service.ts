@@ -15,7 +15,11 @@ export class AccountService {
     const { username, password } = loginaccount;
     const account: LoginInterface = { username, password };
     
-    return this.photoRepository.find();
+    return this.photoRepository.findOneBy({
+      email: username,
+      tel: username,
+      password: password,
+    });
     // try login
     return { name: 'hertonmota' };
   }
@@ -24,7 +28,7 @@ export class AccountService {
     const { name, password, email, ddi, tel, newsletter, privacy } = createaccount;
     const account: AccountInterface = { name, password, email, ddi, tel, newsletter, privacy };
     
-    return this.photoRepository.find();
+    return this.photoRepository.save(account);
     // try create account
     return { name: 'hertonmota' };
   }
