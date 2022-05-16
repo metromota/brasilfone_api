@@ -2,6 +2,9 @@ import { Module } from '@nestjs/common';
 import { AccountModule } from './account/account.module';
 import { SequelizeModule } from '@nestjs/sequelize';
 
+// teste 
+import { DatabaseModule } from './database/database.module';
+
 @Module({
   imports: [
     AccountModule,
@@ -13,6 +16,7 @@ import { SequelizeModule } from '@nestjs/sequelize';
       password: 'password',
       database: 'brasilfone',
     }),
+    DatabaseModule
   ],
   controllers: [],
   providers: [],
