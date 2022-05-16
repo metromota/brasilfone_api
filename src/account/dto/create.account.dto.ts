@@ -5,5 +5,7 @@ export default class CreateAccountDto {
     public password: string,
     public ddi: string,
     public tel: string,
+    public newsletter: string,
+    public privacy: string,
   ) {}
 }
