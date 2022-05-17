@@ -51,24 +51,35 @@ $ yarn run start:prod
 # Rota POST: 'http://localhost:4000/account/login'
 
 Body Params:
-{
-  "username":"",
-  "password":""
-}
+  {
+    "username":"",
+    "password":""
+  }
 
-Resposta caso solicitação for ok:
-{
-  "message": "User Authenticate",
-  "success": true,
-  "data": {
-    "id": "",
-    "name": "",
-    "email": ""
-  },
-  "error": null
-}
+Resposta caso solicitação for Ok:
+  {
+    "id": 1,
+    "name": "name",
+    "email": "email@email.com",
+    "tel": "999999999",
+    "ddi": "55",
+    "privacy": "sim",
+    "newsletter": "sim"
+  }
 
-OBS: Username poder ser E-mail ou Número
+Resposta caso username não exista exista:
+  {
+	  "statusCode": 401,
+	  "message": "Username Dont Exists"
+  }
+
+Resposta caso senha esteja incorreta:
+  {
+    "statusCode": 401,
+    "message": "Invalid Password"
+  }
+
+OBS: Username poder ser E-mail ou Tel
 
 ```
 
@@ -76,41 +87,36 @@ OBS: Username poder ser E-mail ou Número
 
 ```
 # Rota POST: 'http://localhost:4000/account/create'
-{
-	"name":"",
-	"email":"",
-	"password":"",
-	"tel":"",
-	"ddi":""
-	"newsletter":""
-	"privacy":""
-}
 
-Resposta caso solicitação for ok:
-{
-  "message": "Usuário Criado com Sucesso.",
-  "success": true,
-  "error": null
-}
+Body Params:
+  {
+    "name":"",
+    "email":"",
+    "password":"",
+    "tel":"",
+    "ddi":""
+    "newsletter":""
+    "privacy":""
+  }
 
-```
+Resposta caso solicitação for Ok:
+  {
+    "id": 1,
+    "name": "name",
+    "email": "email@email.com",
+    "ddi": "55",
+    "tel": "999999999",
+    "newsletter": "sim",
+    "privacy": "sim"
+  }
 
-## Resposta de Erro
-
-```
-{
-  "message": "Verificar os dados.",
-  "success": false,
-  "data": null,
-  "error": [
-    "Nome do usuário já existe.",
-    "Email do usuário já existe.",
-    "Número do usuário já existe."
-  ]
-}
+Resposta caso o username já exista
+  {
+    "statusCode": 400,
+    "message": "Email or Tel already exists"
+  }
 
 ```
-
 
 ## LinkedIn
 - Author - [Herton Mota](https://www.linkedin.com/in/herton-mota/)

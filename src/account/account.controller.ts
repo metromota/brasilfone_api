@@ -1,4 +1,11 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import {
+  Body,
+  ClassSerializerInterceptor,
+  Controller,
+  Get,
+  Post,
+  UseInterceptors,
+} from '@nestjs/common';
 import { AccountService } from './account.service';
 import CreateAccountDto from './dto/create.account.dto';
 import LoginAccountDto from './dto/login.account.dto';
@@ -7,15 +14,14 @@ import LoginAccountDto from './dto/login.account.dto';
 export class AccountController {
   constructor(private accountservice: AccountService) {}
 
-  @Post()
-  async login(@Body() account: LoginAccountDto) {
-    let logged = await this.accountservice.login(account);
-    return 'logged';
+  @UseInterceptors(ClassSerializerInterceptor)
+  @Get('login')
+  async login(@Body() loginaccountdto: LoginAccountDto) {
+    return await this.accountservice.login(loginaccountdto);
   }
 
-  @Post()
-  async createAccount(@Body() account: CreateAccountDto) {
-    let created = await this.accountservice.createAccount(account);
-    return 'created';
+  @Post('create')
+  async createAccount(@Body() createaccountdto: CreateAccountDto) {
+    return await this.accountservice.createAccount(createaccountdto);
   }
 }

@@ -1,12 +1,10 @@
 import { Module } from '@nestjs/common';
 import { AccountModule } from './account/account.module';
 
-// teste 
+// teste
 
 @Module({
-  imports: [
-    AccountModule,
-  ],
+  imports: [AccountModule],
   controllers: [],
   providers: [],
 })
