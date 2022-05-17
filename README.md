@@ -70,8 +70,8 @@ Resposta caso solicitação for Ok:
 
 Resposta caso username não exista exista:
   {
-	  "statusCode": 401,
-	  "message": "Username Dont Exists"
+    "statusCode": 401,
+    "message": "Username Dont Exists"
   }
 
 Resposta caso senha esteja incorreta:
