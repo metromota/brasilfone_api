@@ -47,9 +47,9 @@ export class AccountService {
       );
     }
 
-    const saltOrRounds = 8;
+    const saltOrRounds = 10;
     const passwordCripted = await bcrypt.hash(password, saltOrRounds);
-    const account: Account = {
+    const accountToSave: Account = {
       name,
       password: passwordCripted,
       email,
@@ -58,8 +58,10 @@ export class AccountService {
       newsletter,
       privacy,
     };
-    const resultAccount: Account = await this.accountRepository.save(account);
-    delete resultAccount.password;
-    return resultAccount;
+    const accountSaved: Account = await this.accountRepository.save(accountToSave);
+    return await this.accountRepository.findOne({
+      where: [{ id: accountSaved.id }]
+    });
+
   }
 }

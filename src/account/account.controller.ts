@@ -19,7 +19,8 @@ export class AccountController {
   async login(@Body() loginaccountdto: LoginAccountDto) {
     return await this.accountservice.login(loginaccountdto);
   }
-
+  
+  @UseInterceptors(ClassSerializerInterceptor)
   @Post('create')
   async createAccount(@Body() createaccountdto: CreateAccountDto) {
     return await this.accountservice.createAccount(createaccountdto);

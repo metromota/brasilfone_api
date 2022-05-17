@@ -48,16 +48,7 @@ $ yarn run start:prod
 
 ### OBS: Na aplicação foi utilizada a porta 4000. 
 ```
- TypeOrmModule.forRoot({
-    type:'postgres',
-    host:'localhost', //host do banco
-    port: 5432,
-    username:'postgres',
-    password:'SENHA',
-    database:'postgres',
-    entities: [__dirname+ '/**/*.entity{.ts,.js}'],
-    synchronize: true,
-  }),
+ await app.listen(4000);
 
 ```
 
