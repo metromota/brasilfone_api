@@ -13,11 +13,13 @@ $ docker run --name brasilfone_api -e POSTGRES_PASSWORD=SENHA -p 5432:5432 -d po
 
 ```
 
+
 ## Instalação das Dependências
 
 ```bash
 $ yarn install
 ```
+
 
 ## Rodando a Aplicação
 
@@ -29,7 +31,7 @@ $ yarn run start:dev
 $ yarn run start:prod
 ```
 
-### OBS: Banco POSTGRESQL rodando no mesmo HOST, caso não esteja alterar app.module.ts 
+### OBS: Banco POSTGRESQL rodando no mesmo HOST, caso não esteja alterar o host app.module.ts 
 ```
  TypeOrmModule.forRoot({
     type:'postgres',
@@ -43,7 +45,6 @@ $ yarn run start:prod
   }),
 
 ```
-
 
 ## Rota de Login API
 
